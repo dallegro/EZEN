@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+/* rcc : 클래스형 */
 
 class Test15 extends Component {
     state = {
@@ -98,7 +99,22 @@ class Test15 extends Component {
         this.setState({
             data: data.map(item => item.no === 5 ?
             //5번하고 같은 것만 수정하고 그렇지 않은 것은 그냥 넘겨~
-            {...item,name:'유금옥',age:'71',addr:'경기도 용인시'}:item)
+            {...item,name:'유금옥',age:71,addr:'경기도 용인시'}:item)
+        })
+    }
+    
+    click8 = (num) => {
+        const { data } = this.state
+        this.setState({
+            data: data.map(item => item.no === num ?
+                {...item, name: '지병주', age: 54} : item)
+        })
+    }
+    click9 = (num) => {
+        const { data } = this.state
+        this.setState({
+            data: data.map(item => item.no === num ?
+                {...item, name: '지병주', age: 54} : item)
         })
     }
 
@@ -126,6 +142,11 @@ class Test15 extends Component {
                     <button onClick={this.click5}>수정1</button>
                     <button onClick={this.click6}>수정2</button>
                     <button onClick={this.click7}>수정3</button>
+                </p>
+                <hr />
+                <p>
+                    <button onClick={this.click8}>수정1</button>
+                    <button onClick={this.click9}>수정2</button>
                 </p>
                 <ul>
                     {
