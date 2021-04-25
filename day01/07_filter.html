@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"> 
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr1 = [10,20,30,40,50]
+        // 배열객체.filter( 변수 => 조건 )
+        //결과 [] 배열 
+        const result1 = arr1.filter( item => item > 20 )
+        console.log( result1 )
+        const result2 = arr1.filter( item => item === 10)
+        console.log( result2)
+        
+        //20삭제  ** 
+        const resutl3 = arr1.filter( item => item !== 20)
+        console.log( resutl3 )
+
+        const data = [
+            {id:1, name:'홍길동',age:20},
+            {id:2, name:'유재석',age:30},
+            {id:3, name:'강호동',age:10},
+            {id:4, name:'이효리',age:40},
+        ]
+        //문제 id가 1번의 객체만 출력 
+        const data1 = data.filter( item => item.id === 1 )
+        console.log(data1)
+
+        //문제 id가 3번의 객체를 제외하고 출력 
+        const data2 = data.filter( item => item.id !== 3 )
+        console.log( data2 )
+
+    </script>
+</body>
+</html>

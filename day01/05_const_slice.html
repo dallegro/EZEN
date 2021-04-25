@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      const arr1=[10,20,30,40,50,60,70,80]
+      arr1.push(90)
+      arr1.push(100)
+      arr1.push(110)
+      //push 원본데이터가 변경된다
+      console.log(arr1)
+
+      const arr2 = [10,20,30,40,50,60,70,80]
+      const arr3 = arr2.concat()
+      console.log(arr2)
+      console.log(arr3)
+      const arr4 = arr2.concat(90,100)
+
+      const arr5 = arr2.slice(2,5)
+      //att2.slice(시작인덱스, 시작부터 개수)
+      console.log(arr5)
+
+      const data = [
+         {id:1, name:'김다슬',age:27},
+         {id:2, name:'임시은',age:26},
+         {id:3, name:'박소희',age:26},
+         {id:4, name:'하나연',age:25},
+         {id:5, name:'임현주',age:25},
+      ]
+      console.log(data)
+      const data1 = data.concat({
+         id:6,
+         name:'이효리',
+         age:30
+      })
+      console.log(data1)
+
+
+   </script>
+</body>
+</html>

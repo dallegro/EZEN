@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"> 
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr =['강아지','고양이','염소','소']
+        //불변성 - 카피본 만들어서 작업 
+        // const arr1 = arr.concat() 
+        const arr1 = arr.concat('토끼') 
+        // const arr2 = [...arr]
+        const arr2 = [...arr, '토끼']
+        console.log( arr1 )
+        console.log( arr2 )
+
+        const dog = {
+            name:'치와와' , age:2 , sex:'남자'
+        }
+        // ...객체명 복사 , 키:값  해당키 값이 변경 (수정)
+        const dog1 = {...dog, age:5 , sex:'여자'}
+        console.log( dog1 )
+
+        const data = [
+            {id:1, name:'홍길동',age:20},
+            {id:2, name:'유재석',age:30},
+            {id:3, name:'강호동',age:10},
+            {id:4, name:'이효리',age:40},
+        ]
+        //2번 유재석,나이 수정 - jsx아니고 함수영역에서 처리
+        const data3 = data.map( (item, index) => {
+            //조건 
+            if( item.id === 2) { //수정
+                return {
+                    ...item ,
+                    name:'유재석형',
+                    age:31
+                }
+            }else{ //그렇지 않은부분은 그냥 넘김
+                return item 
+            }
+        })
+        console.log( data3 )
+
+        //삼항연산자
+        const data4  = data.map( (item,index) => 
+                                  item.id === 3 ? {...item,name:'제시',age:25}:item )
+        console.log( data4 )
+
+
+        const data1 = [...data]
+        console.log(data1)
+        const data2 = [...data, {
+            id:5 , name:'김철수', age:20
+        }]
+        console.log( data2 )
+
+    </script>
+</body>
+</html>
