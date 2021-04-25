@@ -1,5 +1,18 @@
 react.js
 <hr>
+<h2># 프로젝트 생성 </h2>
+<p>npx create-react-app 프로젝트명</p>
+
+<p>cd 프로젝트명</p>
+
+<p>npm start or yarn start - 실행</p>
+
+==============================
+
+yarn create react-app 프로젝트명
+
+==============================
+<hr>
 day 01 (2021.04.18) - es문법
 <br>
 day 02 (2021.04.25) - 프로젝트 만들기 컴포넌트 구조
