@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      const done1 = true
+      const done2 = undefined
+
+      const result1 = done1 === true ? '참' : '거짓'
+      console.log(result1)
+
+      const result2 = done1 ? '참': '거짓'
+      console.log(result2)
+
+      // 조건 && 참 결과
+      const result3 =done1 && '나는 참'
+      console.log(result3)
+
+
+      //조건 || 거짓값
+      const result4 = done2 || '나는 거짓'
+      console.log(result4)
+
+      //if문을 못씀!
+      const aa = done1 && '참'
+      const bb = done2 || '거짓'
+      
+      
+   </script>
+</body>
+</html>

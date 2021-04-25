@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      const arr=['강아지', '고양이', '염소', '소']
+      //불변성 - 카피본 만들어서 작업
+      //const arr1 = arr.concat()
+      const arr1= arr.concat('토끼')
+      //const arr2 = [...arr]
+      console.log(arr)
+      console.log(arr1)
+
+      const dog = {
+         name:'치와와', age:2, sex:'남자'
+      }
+      //...객체명 복사, 키:값 해당키 값이 변경
+      const dog1 = {...dog, age:5, sex:'여자'}
+
+      console.log(dog1)
+
+      const data = [
+         {id:1, name:'김다슬',age:27},
+         {id:2, name:'임시은',age:26},
+         {id:3, name:'박소희',age:26},
+         {id:4, name:'하나연',age:25},
+         {id:5, name:'임현주',age:25},
+      ]
+
+      const data1=[...data]
+      console.log(data1)
+      
+      
+      const data2= [...data,{
+         id:5,name:'김철수',age:20
+      }]
+      console.log(data2)
+
+      //2번 임시은, 나이 수정
+      const data3 = data.map((item,index)=>{
+         //조건
+         if(item.id===2){//수정
+         return{
+            ...item,
+            name:'임시은언니',
+            age:31
+         }
+      }else{//그렇지 않은 부분은 그냥 넘김
+      return item
+   }
+      })
+      console.log(data3)
+
+      //삼항연산자
+      const data4 = data.map((item,index)=>
+      item.id===3?{...item,name:'제시',age:25}:item)
+      console.log(data4)
+
+   </script>
+</body>
+</html>
