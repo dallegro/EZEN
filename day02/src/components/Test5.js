@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-export default class Test5 extends Component {
-    //class영역
+class Test5 extends Component {
+    // class 영역 
     render() {
         //js
-        const done1 = true
-        const done2 = false
+        const done1 = true 
+        const done2 = false 
         const done3 = undefined
         return (
             <div>
-                <h2>논리값 : {done1} 출력안됨</h2>
+                <h2>논리값 : { done1 } 출력안됨 </h2>
                 <p>
-                    {/*삼항연산자*/}
-                    {done1 === true ? <button>로그인</button> : <button>로그아웃</button>}
+                    {/* 삼항연산자 */}
+                    {done1 === true ? <button>로그인</button>:<button>로그아웃</button>}
                 </p>
                 <p>
                     {done1 ? <button>로그인</button>:<button>로그아웃</button>}
@@ -30,3 +30,5 @@ export default class Test5 extends Component {
         );
     }
 }
+
+export default Test5;
