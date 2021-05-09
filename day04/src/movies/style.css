@@ -1,0 +1,9 @@
+.gallery{width: 1600px; margin: 20px auto; display: flex; flex-direction: row; flex-wrap: wrap;}
+.gallery article{ display: flex; margin: 10px; background: #efefef; width: 500px; height: 350px;}
+.gallery article div.left{}
+.gallery article div.left img{width: 250px; height: 350px;}
+.gallery article div.right {width: 220px; height: 350px; margin-left: 15px;}
+.gallery article div.right h3{font-size: 20px; padding-top: 30px; margin-bottom: 10px;}
+.gallery article div.right ul{margin-bottom: 50px;}
+.gallery article div.right ul li{line-height: 50px; border-bottom:1px dotted #999; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.gallery article div.right button{width: 150px; height: 40px; background: #333; color: #fff; border: none;}

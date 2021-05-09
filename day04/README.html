@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h3 id="%EC%98%88%EC%8B%9C">예시</h3>
+<p><a href="http://bse00.dothome.co.kr/react/sample1/">샘플1</a>
+<a href="http://bse00.dothome.co.kr/react/sample2/">샘플2</a>
+<a href="http://bse00.dothome.co.kr/react/sample3/">샘플3</a></p>
+<h3 id="usestate">useState</h3>
+<pre class="hljs"><code><div>state :  동적인 값 
+<span class="hljs-keyword">import</span> React, { useState } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">const</span> [ 현재상태변수  , 상태값을 갱신해주는 setter함수] = useState(초기값)
+<span class="hljs-keyword">const</span> [state, setState] = useState(initialState);
+<span class="hljs-keyword">const</span> [state, setState] = React.useState(initialState);
+
+<span class="hljs-keyword">const</span> [] = useState(<span class="hljs-number">0</span>)
+<span class="hljs-keyword">const</span> [] = useState(<span class="hljs-string">''</span>)
+<span class="hljs-keyword">const</span> [] = useState([])
+<span class="hljs-keyword">const</span> [] = useState({})
+</div></code></pre>
+<h3 id="useref">useRef</h3>
+<pre class="hljs"><code><div>  <span class="hljs-keyword">const</span> xxx = useRef(초기값)
+  <span class="hljs-keyword">const</span> xxx = useRef(<span class="hljs-literal">null</span>)
+  
+  xxx.currrent.??
+  xxx.currrent.focus() 
+  xxx.currrent.value 
+
+  &lt;태그  ref={xxx}&gt;
+</div></code></pre>
+<h3 id="%EA%B0%9D%EC%B2%B4">객체</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> [{키:값}]
+다른 js에서 사용할수 있도록 내보내기 
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> 로 내보낼경우 
+<span class="hljs-keyword">import</span> xxx <span class="hljs-keyword">from</span> <span class="hljs-string">'경로/xxxx.js'</span>  - js는 생략가능
+
+<span class="hljs-keyword">export</span> 로 내보낼경우 
+<span class="hljs-keyword">import</span> { xxx }  <span class="hljs-keyword">from</span> <span class="hljs-string">'경로/xxxx.js'</span>
+</div></code></pre>
+<h3 id="friendjs">friend.js</h3>
+<pre class="hljs"><code><div>[
+   {
+     <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>,
+     <span class="hljs-attr">name</span>: <span class="hljs-string">'유재석'</span>,
+     <span class="hljs-attr">age</span>: <span class="hljs-number">35</span>,
+     <span class="hljs-attr">image</span>:
+       <span class="hljs-string">'https://search.pstatic.net/common?type=a&amp;size=120x150&amp;quality=95&amp;direct=true&amp;src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F201808%2F20180828141741978.jpg'</span>,
+   },
+   {
+     <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>,
+     <span class="hljs-attr">name</span>: <span class="hljs-string">'이효리'</span>,
+     <span class="hljs-attr">age</span>: <span class="hljs-number">33</span>,
+     <span class="hljs-attr">image</span>:
+       <span class="hljs-string">'https://search.pstatic.net/common?type=a&amp;size=120x150&amp;quality=95&amp;direct=true&amp;src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202009%2F2020090618264387.jpg'</span>,
+   },
+   {
+     <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>,
+     <span class="hljs-attr">name</span>: <span class="hljs-string">'이승기'</span>,
+     <span class="hljs-attr">age</span>: <span class="hljs-number">28</span>,
+     <span class="hljs-attr">image</span>:
+       <span class="hljs-string">'https://search.pstatic.net/common?type=a&amp;size=120x150&amp;quality=95&amp;direct=true&amp;src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2F157%2F202005111349228681.png'</span>,
+   },
+   {
+     <span class="hljs-attr">id</span>: <span class="hljs-number">4</span>,
+     <span class="hljs-attr">name</span>: <span class="hljs-string">'아이유'</span>,
+     <span class="hljs-attr">age</span>: <span class="hljs-number">26</span>,
+     <span class="hljs-attr">image</span>:
+       <span class="hljs-string">'https://search.pstatic.net/common?type=a&amp;size=120x150&amp;quality=95&amp;direct=true&amp;src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202103%2F20210324142444281.jpg'</span>,
+   },
+   {
+     <span class="hljs-attr">id</span>: <span class="hljs-number">5</span>,
+     <span class="hljs-attr">name</span>: <span class="hljs-string">'블랙핑크 지수'</span>,
+     <span class="hljs-attr">age</span>: <span class="hljs-number">22</span>,
+     <span class="hljs-attr">image</span>:
+       <span class="hljs-string">'https://search.pstatic.net/common?type=a&amp;size=120x150&amp;quality=95&amp;direct=true&amp;src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202010%2F20201001130749586.jpg'</span>,
+   },
+ ];
+</div></code></pre>
+<h3 id="moviejs">movie.js</h3>
+<pre class="hljs"><code><div> [
+    {<span class="hljs-attr">no</span>:<span class="hljs-number">1</span>, <span class="hljs-attr">poster</span>:<span class="hljs-string">'https://img.megabox.co.kr/SharedImg/2020/03/11/Qgl73W9FxEMYJnnaOYPFtyqSrqB3vmJ2_420.jpg'</span>, <span class="hljs-attr">title</span>:<span class="hljs-string">'라라랜드'</span>, <span class="hljs-attr">date</span>:<span class="hljs-string">'2020.03.25'</span>,<span class="hljs-attr">actor</span>:<span class="hljs-string">'엠마 스톤'</span>,<span class="hljs-attr">director</span>:<span class="hljs-string">'데이미언 셔젤'</span>},
+    {<span class="hljs-attr">no</span>:<span class="hljs-number">2</span>, <span class="hljs-attr">poster</span>:<span class="hljs-string">'https://img.megabox.co.kr/SharedImg/2020/02/12/uPvwgYBnTlO1fdZm8bzilwDoaQJ2F8uA_420.jpg'</span>, <span class="hljs-attr">title</span>:<span class="hljs-string">'킹 오브 프리즘 올 스타즈'</span>, <span class="hljs-attr">date</span>:<span class="hljs-string">'2020.04.02'</span>,<span class="hljs-attr">actor</span>:<span class="hljs-string">'애니메이션'</span>,<span class="hljs-attr">director</span>:<span class="hljs-string">'히시다 마사카즈'</span>},
+    {<span class="hljs-attr">no</span>:<span class="hljs-number">3</span>, <span class="hljs-attr">poster</span>:<span class="hljs-string">'https://img.megabox.co.kr/SharedImg/2020/02/21/IyeZJvAzV3QgEoW4F7HzdS97zfLYfcni_420.jpg'</span>, <span class="hljs-attr">title</span>:<span class="hljs-string">'1917'</span>, <span class="hljs-attr">date</span>:<span class="hljs-string">'2020.02.19'</span>,<span class="hljs-attr">actor</span>:<span class="hljs-string">'조지 맥케이'</span>,<span class="hljs-attr">director</span>:<span class="hljs-string">'샘 멘데스'</span>},
+    {<span class="hljs-attr">no</span>:<span class="hljs-number">4</span>, <span class="hljs-attr">poster</span>:<span class="hljs-string">'https://img.megabox.co.kr/SharedImg/asis/system/mop/poster/2020/73/C2E59B-7D34-4220-8D51-580299453B88.large.jpg'</span>, <span class="hljs-attr">title</span>:<span class="hljs-string">'작은아씨들'</span>, <span class="hljs-attr">date</span>:<span class="hljs-string">'2020.03.25'</span>,<span class="hljs-attr">actor</span>:<span class="hljs-string">'시얼샤 로넌'</span>,<span class="hljs-attr">director</span>:<span class="hljs-string">'그레타 거윅'</span>},
+    {<span class="hljs-attr">no</span>:<span class="hljs-number">5</span>, <span class="hljs-attr">poster</span>:<span class="hljs-string">'https://img.megabox.co.kr/SharedImg/asis/system/mop/poster/2018/C6/013959-C07F-401A-AAC0-CA9A76DB48AE.large.jpg'</span>, <span class="hljs-attr">title</span>:<span class="hljs-string">'스타이즈본'</span>, <span class="hljs-attr">date</span>:<span class="hljs-string">'2018.10.09'</span>,<span class="hljs-attr">actor</span>:<span class="hljs-string">'레이디 가가'</span>,<span class="hljs-attr">director</span>:<span class="hljs-string">'브래들리 쿠퍼'</span>},
+    {<span class="hljs-attr">no</span>:<span class="hljs-number">6</span>, <span class="hljs-attr">poster</span>:<span class="hljs-string">'https://img.megabox.co.kr/SharedImg/2020/06/05/UDP3iiawhwQYYGGDZX3lmt73VFTovwIi_420.jpg'</span>, <span class="hljs-attr">title</span>:<span class="hljs-string">'결백'</span>, <span class="hljs-attr">date</span>:<span class="hljs-string">'2020.06.10'</span>,<span class="hljs-attr">actor</span>:<span class="hljs-string">'허준호, 배종옥, 신혜선'</span>,<span class="hljs-attr">director</span>:<span class="hljs-string">'박상현 '</span>}, 
+    {<span class="hljs-attr">no</span>:<span class="hljs-number">7</span>, <span class="hljs-attr">poster</span>:<span class="hljs-string">'https://img.megabox.co.kr/SharedImg/2020/06/08/78Y8EFo0yUOJQRIkO4mIdYsxZG90g4bj_420.gif'</span>, <span class="hljs-attr">title</span>:<span class="hljs-string">'콜 미 바이 유어 네임백'</span>, <span class="hljs-attr">date</span>:<span class="hljs-string">'2020.06.11'</span>,<span class="hljs-attr">actor</span>:<span class="hljs-string">' 티모시 샬라메'</span>,<span class="hljs-attr">director</span>:<span class="hljs-string">'루카 구아다니노 '</span>},
+    {<span class="hljs-attr">no</span>:<span class="hljs-number">8</span>, <span class="hljs-attr">poster</span>:<span class="hljs-string">'https://img.megabox.co.kr/SharedImg/asis/system/mop/poster/2017/D0/D558A7-DE6C-4178-B3F6-27A023AA5DEE.large.jpg'</span>, <span class="hljs-attr">title</span>:<span class="hljs-string">'위대한 쇼맨'</span>, <span class="hljs-attr">date</span>:<span class="hljs-string">'2020.05.21'</span>,<span class="hljs-attr">actor</span>:<span class="hljs-string">' 휴 잭맨'</span>,<span class="hljs-attr">director</span>:<span class="hljs-string">'마이클 그레이시 '</span>},
+    {<span class="hljs-attr">no</span>:<span class="hljs-number">9</span>, <span class="hljs-attr">poster</span>:<span class="hljs-string">'https://img.megabox.co.kr/SharedImg/2020/05/25/3nE8zx0IneEL2zhcyDWIx9mh8mA8EWgI_420.jpg'</span>, <span class="hljs-attr">title</span>:<span class="hljs-string">'위대한 쇼맨'</span>, <span class="hljs-attr">date</span>:<span class="hljs-string">'2020.05.21'</span>,<span class="hljs-attr">actor</span>:<span class="hljs-string">' 휴 잭맨'</span>,<span class="hljs-attr">director</span>:<span class="hljs-string">'마이클 그레이시 '</span>},
+    {<span class="hljs-attr">no</span>:<span class="hljs-number">10</span>, <span class="hljs-attr">poster</span>:<span class="hljs-string">'https://img.megabox.co.kr/SharedImg/2020/05/13/L1M5yrfpINDCNXETFojjPzPfJk8jcpxx_420.jpg'</span>, <span class="hljs-attr">title</span>:<span class="hljs-string">'침입자'</span>, <span class="hljs-attr">date</span>:<span class="hljs-string">'2020.06.10'</span>,<span class="hljs-attr">actor</span>:<span class="hljs-string">'송지효, 김무열'</span>,<span class="hljs-attr">director</span>:<span class="hljs-string">'손원평'</span>},
+    {<span class="hljs-attr">no</span>:<span class="hljs-number">11</span>, <span class="hljs-attr">poster</span>:<span class="hljs-string">'https://img.megabox.co.kr/SharedImg/2020/09/25/4kUTZBzkNr6o4iGcIA1xARHdzqlQxlhR_420.jpg'</span> , <span class="hljs-attr">title</span>:<span class="hljs-string">'국제수사'</span>, <span class="hljs-attr">date</span>:<span class="hljs-string">'2020.09.29'</span>,<span class="hljs-attr">actor</span>:<span class="hljs-string">'곽도원, 김대명, 김희원, 김상호'</span>,<span class="hljs-attr">director</span>:<span class="hljs-string">'김봉한'</span>},
+    {<span class="hljs-attr">no</span>:<span class="hljs-number">12</span>, <span class="hljs-attr">poster</span>:<span class="hljs-string">'https://img.megabox.co.kr/SharedImg/2020/07/29/W3xWQv4N2jryIQvvwqIkq9TqzU1tWmqO_420.jpg'</span> , <span class="hljs-attr">title</span>:<span class="hljs-string">'테넷'</span>, <span class="hljs-attr">date</span>:<span class="hljs-string">'2020.08.26'</span>,<span class="hljs-attr">actor</span>:<span class="hljs-string">'존 데이비드 워싱턴'</span>,<span class="hljs-attr">director</span>:<span class="hljs-string">'크리스토퍼 놀란'</span>},
+    {<span class="hljs-attr">no</span>:<span class="hljs-number">13</span>, <span class="hljs-attr">poster</span>:<span class="hljs-string">'https://img.megabox.co.kr/SharedImg/2020/09/16/SQhMdk4T2bk5Zr8jRpTO6kLE3eTjkwLW_420.png'</span> , <span class="hljs-attr">title</span>:<span class="hljs-string">'죽지않는 인간들의 밤'</span>, <span class="hljs-attr">date</span>:<span class="hljs-string">'2020.09.29'</span>,<span class="hljs-attr">actor</span>:<span class="hljs-string">'이정현, 김성오'</span>,<span class="hljs-attr">director</span>:<span class="hljs-string">'신정원'</span>},
+    {<span class="hljs-attr">no</span>:<span class="hljs-number">14</span>, <span class="hljs-attr">poster</span>:<span class="hljs-string">'https://img.megabox.co.kr/SharedImg/2020/09/17/oIsaaaG39Z6x4qLiOTLFXtmDEEoTtr2V_420.jpg'</span> , <span class="hljs-attr">title</span>:<span class="hljs-string">'담보'</span>, <span class="hljs-attr">date</span>:<span class="hljs-string">'2020.09.29'</span>,<span class="hljs-attr">actor</span>:<span class="hljs-string">'성동일, 하지원, 김희원'</span>,<span class="hljs-attr">director</span>:<span class="hljs-string">'강대규'</span>},
+    ]
+</div></code></pre>
+
+</body>
+</html>
